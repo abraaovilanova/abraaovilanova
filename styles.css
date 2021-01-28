@@ -174,7 +174,7 @@ div .open-tag {
 }
 
 .open-tag.small {
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin-left: 20px;
     padding: 0;
 }
@@ -245,7 +245,6 @@ div .open-tag {
 }
 
 .section-skills{
-    font-size: 1.5rem;
     overflow-wrap: break-word;
     text-overflow: clip;
 }
