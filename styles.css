@@ -137,8 +137,15 @@ main .home{
 }
 .home-icon {
     margin: 5px;
+
 }
-.home-icon:hover {
+
+.home-icon a{
+    color: #ffffff;
+
+}
+
+.home-icon a:hover {
     color: #2c7cd6;
 }
 
@@ -180,6 +187,7 @@ div .open-tag {
 
 .css-like-title {
     color: rgb(215, 186, 125);
+    margin-left: 40px;
 }
 
 .css-like-title > span {
@@ -188,10 +196,16 @@ div .open-tag {
 }
 
 .css-like-param {
-    margin: 20px;
+    margin-left: 60px;
     color: rgb(124, 220, 240);
 }
-
+.css-like-body{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.css-end{
+    margin-left: 40px;
+}
 .css-like-coment{
     color: rgb(106,153,85);
     margin: 20px;
@@ -210,7 +224,9 @@ div .open-tag {
     margin-top: 20px;
     text-align: center;
 }
-
+.javascript-like {
+    margin-left: 20px;
+}
 .javascript-function{
     color: #2c7cd6;
 }
