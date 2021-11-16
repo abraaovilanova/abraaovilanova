@@ -1,2 +1,2 @@
 # Olá, meu nome é Abraão
-## Eu sou desenvolvedor Frontend
+## Eu sou desenvolvedor Fullstack
