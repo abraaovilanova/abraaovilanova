@@ -4,14 +4,15 @@ Eu sou desenvolvedor Fullstack, minha principal ferramenta é o JavaScript e seu
 ## Ferramentas
 ### Front-end
 * React
-** Redux
-** React Router
-** React Testing Library
-** Jest
-** Next
+  * Redux
+  * React Router
+  * React Testing Library
+  * Jest
+* Next
 * Vue
 * HTML/CSS/JavaScript
 * Sass
+* Bootstrap
 
 ### Back-end
 * Node / Express
