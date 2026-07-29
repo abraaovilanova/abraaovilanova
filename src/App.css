@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+}
+
+.window {
+  border: 1px solid #4dc233;
+  margin: 20px;
+}
+
+.window-title-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.window-title {
+  background-color: #4dc233;
+  color: #111310;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  font-size: 14px;
+}
