@@ -230,6 +230,17 @@ function App() {
         }
       />
 
+      <Window title='Contato' content={
+        <div>
+          <ul>
+            <li>
+              <strong> abraaovilanova@gmail.com</strong>
+            </li>
+          </ul>
+      </div>
+      } 
+      />
+
       <div>
         Feito com ❤︎ em Recife © 2026 Abraão Vila Nova. Todos os direitos
         reservados.
