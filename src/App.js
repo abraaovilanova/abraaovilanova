@@ -1,122 +1,238 @@
 import './App.css';
 import Window from './components/Window';
+
 function App() {
   return (
     <div className='App'>
-      <h2>OLÁ, MEU NOME É ABRAÃO VILA NOVA</h2>
-      <div>DEV FULL STACK / WEB GIS / GAME DESIGN</div>
+      <div className='version-language'>
+        <span>VERSÃO: 0.0.1</span>
+        <span>Língua: PT-BR</span>
+      </div>
+      <div className='header'>
+        <h2>OLÁ, MEU NOME É ABRAÃO VILA NOVA</h2>
+        <div>DEV FULL STACK / WEB GIS / GAME DESIGN</div>
+        <div className='color-change-container'>
+          <a
+            href='https://github.com/abraaovilanova'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <span
+              className='color-icon'
+              role='img'
+              aria-label='GitHub'
+              style={{
+                '--icon': `url(${process.env.PUBLIC_URL + '/images/gh-icon.png'})`,
+              }}
+            />
+          </a>
+          <a
+            href='https://www.linkedin.com/in/abraao-vila-nova-ab3333a4/'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <span
+              className='color-icon'
+              role='img'
+              aria-label='Linkedin'
+              style={{
+                '--icon': `url(${process.env.PUBLIC_URL + '/images/linkedin-icon.png'})`,
+              }}
+            />
+          </a>
+        </div>
+      </div>
       <Window
         title='Sobre mim'
         content={
-          <div>
-            <p>
-              I am a Fullstack Developer with expertise in React and React
-              Native, as well as complementary libraries such as Redux and React
-              Router.
-            </p>
-            <p>
-              Over the years, I have expanded my skills to backend development
-              using Python (Tornado, Flask, FastAPI) and Java (Spring Boot with
-              WebFlux), working on real-time applications, fleet monitoring, and
-              alert processing using computer vision.
-            </p>
-            <p>
-              O My experience also includes maps and camera streaming, building
-              RESTful APIs, and integrating computer vision models into web
-              applications. I have worked on projects involving data pipelines,
-              cloud platforms (AWS, Azure), CI/CD, and containerization
-              (Docker).
-            </p>
-            <p>
-              Additionally, I contributed to the initial version of the Atlas of
-              Pernambuco, a project in partnership with Senai to develop a
-              mapping platform that gathers key insights for the state's
-              development.
-            </p>
+          <div className='about-me-content'>
+            <img
+              src={process.env.PUBLIC_URL + '/images/me.jpeg'}
+              alt='prifile'
+              width='10%'
+            />
+            <div>
+              <p>
+                Sou Desenvolvedor Full Stack com experiência no desenvolvimento
+                de aplicações utilizando JavaScript, Python, Java e C++. Tenho
+                experiência na criação de sistemas escaláveis, APIs, aplicações
+                web e soluções voltadas para processamento e visualização de
+                dados.
+              </p>
+
+              <p>
+                Ao longo da minha carreira, participei do desenvolvimento de
+                aplicações de monitoramento em tempo real para frotas de
+                caminhões, sistemas de processamento de alertas utilizando visão
+                computacional, soluções para monitoramento do uso de
+                Equipamentos de Proteção Individual (EPI) e plataformas Web GIS
+                para visualização e análise de dados geoespaciais.
+              </p>
+
+              <p>
+                Também possuo experiência com tecnologias em nuvem e DevOps,
+                utilizando plataformas como Google Cloud Platform (GCP) e Azure
+                DevOps para automação, integração contínua (CI/CD) e
+                gerenciamento de infraestrutura.
+              </p>
+            </div>
           </div>
         }
       />
 
       <Window
-        title='Sobre mim'
+        title='Experiência'
         content={
           <ul>
             <li>
-              <strong>Fullstack Developer</strong> - <em>Freelancer</em> (2020 -
-              Present)
+              <strong>Desenvolvedor Full Stack</strong> – <em>PixForce</em>{' '}
+              (2023 – 2026)
               <ul>
                 <li>
-                  Developed web applications using React, React Native, and
-                  complementary libraries.
+                  Desenvolvimento de soluções de P&D nas áreas de visão
+                  computacional, processamento de imagens, geoprocessamento e
+                  análise de dados.
                 </li>
                 <li>
-                  Implemented backend services with Python (Tornado, Flask,
-                  FastAPI) and Java (Spring Boot).
+                  Desenvolvimento de aplicações backend utilizando Python
+                  (FastAPI e Flask) e Java (Spring Boot), além de aplicações
+                  frontend com React, Redux e TypeScript.
                 </li>
                 <li>
-                  Worked on real-time applications, fleet monitoring, and alert
-                  processing using computer vision.
+                  Desenvolvimento de sistemas em tempo real para monitoramento
+                  de frotas de veículos e processamento de alertas baseados em
+                  visão computacional.
                 </li>
                 <li>
-                  Built RESTful APIs and integrated computer vision models into
-                  web applications.
+                  Implementação de soluções para monitoramento do uso de
+                  Equipamentos de Proteção Individual (EPI) utilizando
+                  inteligência artificial e visão computacional.
                 </li>
                 <li>
-                  Managed data pipelines, cloud platforms (AWS, Azure), CI/CD,
-                  and containerization (Docker).
+                  Desenvolvimento de aplicações Web GIS para visualização,
+                  processamento e análise de imagens de satélite e dados
+                  geoespaciais.
+                </li>
+                <li>
+                  Projeto e implementação de APIs RESTful e integração de
+                  modelos de visão computacional em aplicações web.
+                </li>
+                <li>
+                  Gerenciamento de pipelines de dados, conteinerização com
+                  Docker, implantação em ambientes AWS e Azure e automação de
+                  processos com CI/CD.
                 </li>
               </ul>
             </li>
+
             <li>
-              <strong>Software Engineer</strong> - <em>Company XYZ</em> (2018 -
-              2020)
+              <strong>Desenvolvedor Full Stack</strong> – <em>Maxtrack</em>{' '}
+              (2021 – 2023)
               <ul>
                 <li>
-                  Contributed to the development of web applications using React
-                  and Redux.
+                  Desenvolvimento de aplicações web utilizando React, Redux e
+                  Python (Tornado).
                 </li>
-                <li>Implemented backend services with Python and Java.</li>
                 <li>
-                  Worked on mapping platforms and data visualization projects.
+                  Desenvolvimento de APIs e serviços backend voltados para
+                  sistemas de monitoramento de frotas em tempo real.
+                </li>
+                <li>
+                  Desenvolvimento de plataformas de mapeamento, visualização de
+                  dados e soluções baseadas em informações geoespaciais.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>Desenvolvedor Frontend</strong> – <em>Foods GO</em> (2020
+              – 2021)
+              <ul>
+                <li>
+                  Desenvolvimento de interfaces web utilizando React e Vue.js,
+                  priorizando desempenho, usabilidade e experiência do usuário.
+                </li>
+                <li>
+                  Desenvolvimento de plataforma para pedidos online de
+                  restaurantes e integração com chatbot para atendimento
+                  automatizado.
                 </li>
               </ul>
             </li>
           </ul>
         }
       />
-      <div className='window'>
-        <h3>Projetos</h3>
-        <div>
+
+      <Window
+        title='Projetos'
+        content={
+          <div>
+            <ul>
+              <li>
+                <strong>
+                  <a href='https://plataformaenergetica.pe.gov.br/'>
+                    Plataforma Energética de Pernambuco
+                  </a>
+                </strong>{' '}
+                - <em>Parceria com o Senai</em>
+                <ul>
+                  <li>
+                    Desenvolvi uma plataforma de mapeamento para reunir
+                    informações essenciais para o desenvolvimento do estado.
+                  </li>
+                  <li>
+                    Implementei funcionalidades para visualização e análise de
+                    dados.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>
+                  <a href='https://manguebytegames.com/'>MangueByte Games</a>
+                </strong>{' '}
+                - <em>Projeto Pessoal</em>
+                <ul>
+                  <li>
+                    Desenvolvimento de Jogos 2D e 3D utilizando Unity, com foco
+                    em mecânicas de jogo RPG de turnos, design de níveis e
+                    experiência do usuário.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>
+                  <a href='https://www.youtube.com/@FunWithMaps-dev'>
+                    Fun With Maps
+                  </a>
+                </strong>{' '}
+                - <em>Projeto Pessoal</em>
+                <ul>
+                  <li>
+                    Vídeos sobre desenvolvimento de aplicações web direcionadas
+                    a geoprocessamento.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        }
+      />
+
+      <Window
+        title='Formação'
+        content={
           <ul>
             <li>
-              <strong>Atlas of Pernambuco</strong> - <em>Senai Partnership</em>
-              <ul>
-                <li>
-                  Developed a mapping platform to gather key insights for the
-                  state's development.
-                </li>
-                <li>
-                  Implemented features for data visualization and analysis.
-                </li>
-              </ul>
+              <strong>Bacharelado em Engenharia Civil</strong> -{' '}
+              <em>Universidade Federal de Pernambuco</em> (2013 - 2018)
             </li>
           </ul>
-        </div>
-      </div>
-      <Window
-        title='Formaçãos'
-        content={
-           <ul>
-          <li>
-            <strong>Bachelor's Degree in Computer Science</strong> -{' '}
-            <em>University of Pernambuco</em> (2014 - 2018)
-          </li>
-        </ul>
         }
       />
 
       <div>
-        Feito com amor em Recife © 2024 Abraão Vila Nova. All rights reserved.
+        Feito com ❤︎ em Recife © 2026 Abraão Vila Nova. Todos os direitos
+        reservados.
       </div>
     </div>
   );
