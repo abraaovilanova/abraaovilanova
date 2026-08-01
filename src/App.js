@@ -5,7 +5,7 @@ function App() {
   return (
     <div className='App'>
       <div className='version-language'>
-        <span>VERSÃO: 0.0.1</span>
+        <span>VERSÃO: 0.1.0</span>
         <span>Língua: PT-BR</span>
       </div>
       <div className='header'>
