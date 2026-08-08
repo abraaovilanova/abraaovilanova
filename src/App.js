@@ -54,19 +54,22 @@ function App() {
             <div>
               <p>
                 Sou Desenvolvedor Full Stack com experiência no desenvolvimento
-                de aplicações utilizando JavaScript, Python, Java e C++. Tenho
-                experiência na criação de sistemas escaláveis, APIs, aplicações
-                web e soluções voltadas para processamento e visualização de
-                dados.
+                de aplicações SaaS e P&D utilizando JavaScript, Python, Java e
+                C++. Tenho experiência na criação de sistemas escaláveis, APIs,
+                aplicações web e soluções voltadas para processamento e
+                visualização de dados.
               </p>
 
               <p>
                 Ao longo da minha carreira, participei do desenvolvimento de
                 aplicações de monitoramento em tempo real para frotas de
-                caminhões, sistemas de processamento de alertas utilizando visão
-                computacional, soluções para monitoramento do uso de
-                Equipamentos de Proteção Individual (EPI) e plataformas Web GIS
-                para visualização e análise de dados geoespaciais.
+                caminhões, como maior resultado diminuindo a fadiga dos
+                motoristas e o risco de acidentes em rodovias pelo brasil, assim
+                como ajudando os motoristas com as melhores rotas baseado em
+                dados históricos, sistemas de processamento de alertas
+                utilizando visão computacional, soluções para monitoramento do
+                uso de Equipamentos de Proteção Individual (EPI) e plataformas
+                Web GIS para visualização e análise de dados geoespaciais.
               </p>
 
               <p>
@@ -75,6 +78,7 @@ function App() {
                 DevOps para automação, integração contínua (CI/CD) e
                 gerenciamento de infraestrutura.
               </p>
+              <p>Atualmente eu estou estudando Unity para desenvolvimento de jogos, o foco é jogos mobile de RPG baseado em turnos</p>
             </div>
           </div>
         }
@@ -88,6 +92,7 @@ function App() {
               <strong>Desenvolvedor Full Stack</strong> – <em>PixForce</em>{' '}
               (2023 – 2026)
               <ul>
+                <strong>Atividades e responsabilidades:</strong>
                 <li>
                   Desenvolvimento de soluções de P&D nas áreas de visão
                   computacional, processamento de imagens, geoprocessamento e
@@ -121,6 +126,22 @@ function App() {
                   Gerenciamento de pipelines de dados, conteinerização com
                   Docker, implantação em ambientes AWS e Azure e automação de
                   processos com CI/CD.
+                </li>
+                <strong>Resultados alcançados:</strong>
+                <li>
+                  Desenvolvimento de um sistema de monitoramento em tempo real
+                  para frotas de veículos, reduzindo a fadiga dos motoristas e
+                  o risco de acidentes em rodovias.
+                </li>
+                <li>
+                  Implementação de uma solução de monitoramento do uso de EPI,
+                  aumentando a segurança dos trabalhadores e reduzindo o risco
+                  de acidentes.
+                </li>
+                <li>
+                  Desenvolvimento de uma plataforma Web GIS para visualização e
+                  análise de dados geoespaciais, melhorando a tomada de
+                  decisões estratégicas.
                 </li>
               </ul>
             </li>
@@ -230,15 +251,17 @@ function App() {
         }
       />
 
-      <Window title='Contato' content={
-        <div>
-          <ul>
-            <li>
-              <strong> abraaovilanova@gmail.com</strong>
-            </li>
-          </ul>
-      </div>
-      } 
+      <Window
+        title='Contato'
+        content={
+          <div>
+            <ul>
+              <li>
+                <strong> abraaovilanova@gmail.com</strong>
+              </li>
+            </ul>
+          </div>
+        }
       />
 
       <div>
