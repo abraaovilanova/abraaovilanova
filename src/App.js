@@ -1,16 +1,60 @@
+import { useEffect, useState } from 'react';
 import './App.css';
 import Window from './components/Window';
+import translations, {
+  LANGUAGES,
+  DEFAULT_LANGUAGE,
+  EMAIL,
+} from './i18n/translations';
+
+const VERSION = '0.1.1';
+const STORAGE_KEY = 'language';
+
+function initialLanguage() {
+  const stored = window.localStorage.getItem(STORAGE_KEY);
+  if (stored && translations[stored]) return stored;
+
+  const browser = window.navigator.language || '';
+  const match = LANGUAGES.find(
+    ({ code }) => browser === code || browser.split('-')[0] === code.split('-')[0]
+  );
+  return match ? match.code : DEFAULT_LANGUAGE;
+}
 
 function App() {
+  const [language, setLanguage] = useState(initialLanguage);
+  const t = translations[language];
+
+  useEffect(() => {
+    window.localStorage.setItem(STORAGE_KEY, language);
+    document.documentElement.lang = language;
+  }, [language]);
+
   return (
     <div className='App'>
       <div className='version-language'>
-        <span>VERSÃO: 0.1.0</span>
-        <span>Língua: PT-BR</span>
+        <span>
+          {t.versionLabel}: {VERSION}
+        </span>
+        <label className='language-select'>
+          <span>{t.languageLabel}:</span>
+          <select
+            aria-label={t.languageSelectAria}
+            value={language}
+            onChange={(event) => setLanguage(event.target.value)}
+          >
+            {LANGUAGES.map(({ code, label }) => (
+              <option key={code} value={code}>
+                {label}
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
+
       <div className='header'>
-        <h2>OLÁ, MEU NOME É ABRAÃO VILA NOVA</h2>
-        <div>DEV FULL STACK / WEB GIS / GAME DESIGN</div>
+        <h2>{t.header.greeting}</h2>
+        <div>{t.header.role}</div>
         <div className='color-change-container'>
           <a
             href='https://github.com/abraaovilanova'
@@ -42,232 +86,119 @@ function App() {
           </a>
         </div>
       </div>
+
       <Window
-        title='Sobre mim'
+        title={t.about.title}
         content={
           <div className='about-me-content'>
             <img
               src={process.env.PUBLIC_URL + '/images/me.jpeg'}
-              alt='prifile'
-              width='10%'
+              alt={t.header.greeting}
+              className='profile-picture'
             />
             <div>
-              <p>
-                Sou Desenvolvedor Full Stack com experiência no desenvolvimento
-                de aplicações SaaS e P&D utilizando JavaScript, Python, Java e
-                C++. Tenho experiência na criação de sistemas escaláveis, APIs,
-                aplicações web e soluções voltadas para processamento e
-                visualização de dados.
+              {t.about.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              <p className='stack-line'>
+                <strong>{t.about.stackLabel}:</strong>{' '}
+                {t.about.stack.map((item) => (
+                  <span className='stack-tag' key={item}>
+                    {item}
+                  </span>
+                ))}
               </p>
-
-              <p>
-                Ao longo da minha carreira, participei do desenvolvimento de
-                aplicações de monitoramento em tempo real para frotas de
-                caminhões, como maior resultado diminuindo a fadiga dos
-                motoristas e o risco de acidentes em rodovias pelo brasil, assim
-                como ajudando os motoristas com as melhores rotas baseado em
-                dados históricos, sistemas de processamento de alertas
-                utilizando visão computacional, soluções para monitoramento do
-                uso de Equipamentos de Proteção Individual (EPI) e plataformas
-                Web GIS para visualização e análise de dados geoespaciais.
-              </p>
-
-              <p>
-                Também possuo experiência com tecnologias em nuvem e DevOps,
-                utilizando plataformas como Google Cloud Platform (GCP) e Azure
-                DevOps para automação, integração contínua (CI/CD) e
-                gerenciamento de infraestrutura.
-              </p>
-              <p>Atualmente eu estou estudando Unity para desenvolvimento de jogos, o foco é jogos mobile de RPG baseado em turnos</p>
             </div>
           </div>
         }
       />
 
       <Window
-        title='Experiência'
+        title={t.experience.title}
         content={
-          <ul>
-            <li>
-              <strong>Desenvolvedor Full Stack</strong> – <em>PixForce</em>{' '}
-              (2023 – 2026)
-              <ul>
-                <strong>Atividades e responsabilidades:</strong>
-                <li>
-                  Desenvolvimento de soluções de P&D nas áreas de visão
-                  computacional, processamento de imagens, geoprocessamento e
-                  análise de dados.
-                </li>
-                <li>
-                  Desenvolvimento de aplicações backend utilizando Python
-                  (FastAPI e Flask) e Java (Spring Boot), além de aplicações
-                  frontend com React, Redux e TypeScript.
-                </li>
-                <li>
-                  Desenvolvimento de sistemas em tempo real para monitoramento
-                  de frotas de veículos e processamento de alertas baseados em
-                  visão computacional.
-                </li>
-                <li>
-                  Implementação de soluções para monitoramento do uso de
-                  Equipamentos de Proteção Individual (EPI) utilizando
-                  inteligência artificial e visão computacional.
-                </li>
-                <li>
-                  Desenvolvimento de aplicações Web GIS para visualização,
-                  processamento e análise de imagens de satélite e dados
-                  geoespaciais.
-                </li>
-                <li>
-                  Projeto e implementação de APIs RESTful e integração de
-                  modelos de visão computacional em aplicações web.
-                </li>
-                <li>
-                  Gerenciamento de pipelines de dados, conteinerização com
-                  Docker, implantação em ambientes AWS e Azure e automação de
-                  processos com CI/CD.
-                </li>
-                <strong>Resultados alcançados:</strong>
-                <li>
-                  Desenvolvimento de um sistema de monitoramento em tempo real
-                  para frotas de veículos, reduzindo a fadiga dos motoristas e
-                  o risco de acidentes em rodovias.
-                </li>
-                <li>
-                  Implementação de uma solução de monitoramento do uso de EPI,
-                  aumentando a segurança dos trabalhadores e reduzindo o risco
-                  de acidentes.
-                </li>
-                <li>
-                  Desenvolvimento de uma plataforma Web GIS para visualização e
-                  análise de dados geoespaciais, melhorando a tomada de
-                  decisões estratégicas.
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <strong>Desenvolvedor Full Stack</strong> – <em>Maxtrack</em>{' '}
-              (2021 – 2023)
-              <ul>
-                <li>
-                  Desenvolvimento de aplicações web utilizando React, Redux e
-                  Python (Tornado).
-                </li>
-                <li>
-                  Desenvolvimento de APIs e serviços backend voltados para
-                  sistemas de monitoramento de frotas em tempo real.
-                </li>
-                <li>
-                  Desenvolvimento de plataformas de mapeamento, visualização de
-                  dados e soluções baseadas em informações geoespaciais.
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <strong>Desenvolvedor Frontend</strong> – <em>Foods GO</em> (2020
-              – 2021)
-              <ul>
-                <li>
-                  Desenvolvimento de interfaces web utilizando React e Vue.js,
-                  priorizando desempenho, usabilidade e experiência do usuário.
-                </li>
-                <li>
-                  Desenvolvimento de plataforma para pedidos online de
-                  restaurantes e integração com chatbot para atendimento
-                  automatizado.
-                </li>
-              </ul>
-            </li>
+          <ul className='job-list'>
+            {t.experience.jobs.map((job) => (
+              <li key={`${job.company}-${job.period}`}>
+                <div className='job-heading'>
+                  <strong>{job.role}</strong> – <em>{job.company}</em>{' '}
+                  <span className='job-period'>({job.period})</span>
+                </div>
+                <ul className='entry-list'>
+                  {job.entries.map((entry) => (
+                    <li key={entry.problem}>
+                      <strong className='entry-problem'>{entry.problem}</strong>{' '}
+                      {entry.action}{' '}
+                      <span className='entry-result'>
+                        {t.experience.resultLabel}: {entry.result}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
           </ul>
         }
       />
 
       <Window
-        title='Projetos'
-        content={
-          <div>
-            <ul>
-              <li>
-                <strong>
-                  <a href='https://plataformaenergetica.pe.gov.br/'>
-                    Plataforma Energética de Pernambuco
-                  </a>
-                </strong>{' '}
-                - <em>Parceria com o Senai</em>
-                <ul>
-                  <li>
-                    Desenvolvi uma plataforma de mapeamento para reunir
-                    informações essenciais para o desenvolvimento do estado.
-                  </li>
-                  <li>
-                    Implementei funcionalidades para visualização e análise de
-                    dados.
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <strong>
-                  <a href='https://manguebytegames.com/'>MangueByte Games</a>
-                </strong>{' '}
-                - <em>Projeto Pessoal</em>
-                <ul>
-                  <li>
-                    Desenvolvimento de Jogos 2D e 3D utilizando Unity, com foco
-                    em mecânicas de jogo RPG de turnos, design de níveis e
-                    experiência do usuário.
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <strong>
-                  <a href='https://www.youtube.com/@FunWithMaps-dev'>
-                    Fun With Maps
-                  </a>
-                </strong>{' '}
-                - <em>Projeto Pessoal</em>
-                <ul>
-                  <li>
-                    Vídeos sobre desenvolvimento de aplicações web direcionadas
-                    a geoprocessamento.
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        }
-      />
-
-      <Window
-        title='Formação'
+        title={t.projects.title}
         content={
           <ul>
-            <li>
-              <strong>Bacharelado em Engenharia Civil</strong> -{' '}
-              <em>Universidade Federal de Pernambuco</em> (2013 - 2018)
-            </li>
+            {t.projects.items.map((project) => (
+              <li key={project.url}>
+                <strong>
+                  <a href={project.url} target='_blank' rel='noreferrer'>
+                    {project.name}
+                  </a>
+                </strong>{' '}
+                – <em>{project.subtitle}</em>
+                <ul>
+                  {project.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+              </li>
+            ))}
           </ul>
         }
       />
 
       <Window
-        title='Contato'
+        title={t.education.title}
         content={
-          <div>
-            <ul>
-              <li>
-                <strong> abraaovilanova@gmail.com</strong>
+          <ul>
+            {t.education.items.map((item) => (
+              <li key={item.degree}>
+                <strong>{item.degree}</strong> – <em>{item.school}</em>{' '}
+                <span className='job-period'>({item.period})</span>
               </li>
-            </ul>
-          </div>
+            ))}
+          </ul>
         }
       />
 
-      <div>
-        Feito com ❤︎ em Recife © 2026 Abraão Vila Nova. Todos os direitos
-        reservados.
-      </div>
+      <Window
+        title={t.contact.title}
+        content={
+          <ul>
+            <li>
+              <a href={`mailto:${EMAIL}`}>
+                <strong>{EMAIL}</strong>
+              </a>
+            </li>
+            <li>
+              <a
+                href={`${process.env.PUBLIC_URL}/cv-${language}.pdf`}
+                download
+              >
+                <strong>{t.contact.downloadCv} [↓]</strong>
+              </a>
+            </li>
+          </ul>
+        }
+      />
+
+      <div className='footer'>{t.footer}</div>
     </div>
   );
 }

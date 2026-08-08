@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
 
+:root {
+  --green: #4dc233;
+  --green-bright: #7dff5c;
+  --green-dim: #2f7a1f;
+  --background: #111310;
+}
+
 body {
   margin: 0;
   font-family: 'Jersey 25', sans-serif;
@@ -8,12 +15,69 @@ body {
   font-size: 26px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #111310;
-  color: #4dc233;
+  background-color: var(--background);
+  color: var(--green);
+  text-shadow: 0 0 4px rgba(77, 194, 51, 0.55);
 }
 
 a {
-  color: #4dc233;
+  color: var(--green);
   text-decoration: none;
+  border-bottom: 1px dashed var(--green-dim);
+}
 
+a:hover,
+a:focus-visible {
+  color: var(--green-bright);
+  border-bottom-color: var(--green-bright);
+  text-shadow: 0 0 8px rgba(125, 255, 92, 0.8);
+}
+
+/* Vidro do CRT: linhas de varredura + brilho no centro da tela. */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+body::before {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.28) 3px,
+    rgba(0, 0, 0, 0.28) 4px
+  );
+}
+
+body::after {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(77, 194, 51, 0.06) 0%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  animation: flicker 4s infinite steps(60);
+}
+
+@keyframes flicker {
+  0%,
+  97%,
+  100% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 0.86;
+  }
+  99% {
+    opacity: 0.95;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    animation: none;
+  }
 }
