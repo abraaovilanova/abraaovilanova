@@ -1,7 +1,7 @@
 {
   "name": "abraaovilanova",
   "version": "0.1.1",
-  "homepage": "https:/abraaovilanova.com",
+  "homepage": "https://abraaovilanova.com",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
