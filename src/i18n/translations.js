@@ -75,6 +75,14 @@ const translations = {
               result:
                 'Análises que levavam 3 dias passaram a levar 2 horas, para mais de 500 usuários.',
             },
+            {
+              problem:
+                'Serviços de eletricistas em campo praticamente sem auditoria.',
+              action:
+                'Desenvolvi uma plataforma de auditoria de documentos para a CEMIG, analisando mais de 120 mil documentos por mês para avaliar os serviços executados por eletricistas a partir de imagens e informações cadastradas em campo.',
+              result:
+                'A cobertura de auditoria saltou de 0,25% para 80% dos serviços.',
+            },
           ],
         },
         {
@@ -215,6 +223,13 @@ const translations = {
                 'Built a Web GIS platform for visualizing and analyzing satellite imagery (React + PostGIS + Docker, deployed on AWS and Azure with CI/CD), moving the analysis into the browser.',
               result:
                 'Analyses that took 3 days now take 2 hours, for more than 500 users.',
+            },
+            {
+              problem: 'Field electrician work going essentially unaudited.',
+              action:
+                'Built a document auditing platform for CEMIG, analyzing over 120,000 documents per month to assess work performed by electricians from field-captured images and records.',
+              result:
+                'Audit coverage jumped from 0.25% to 80% of all service orders.',
             },
           ],
         },
@@ -358,6 +373,14 @@ const translations = {
               result:
                 'Des analyses de 3 jours ramenées à 2 heures, pour plus de 500 utilisateurs.',
             },
+            {
+              problem:
+                'Des interventions d’électriciens sur le terrain quasiment jamais auditées.',
+              action:
+                "J'ai développé une plateforme d'audit de documents pour CEMIG, analysant plus de 120 000 documents par mois pour évaluer les interventions des électriciens à partir d'images et d'informations saisies sur le terrain.",
+              result:
+                "La couverture d'audit est passée de 0,25 % à 80 % des interventions.",
+            },
           ],
         },
         {
@@ -499,6 +522,14 @@ const translations = {
                 'Construí una plataforma Web SIG para visualizar y analizar imágenes satelitales (React + PostGIS + Docker, desplegada en AWS y Azure con CI/CD), llevando el análisis al navegador.',
               result:
                 'Análisis que tomaban 3 días pasaron a tomar 2 horas, para más de 500 usuarios.',
+            },
+            {
+              problem:
+                'Servicios de electricistas en campo prácticamente sin auditar.',
+              action:
+                'Desarrollé una plataforma de auditoría de documentos para CEMIG, analizando más de 120.000 documentos al mes para evaluar los servicios ejecutados por electricistas a partir de imágenes e información registrada en campo.',
+              result:
+                'La cobertura de auditoría pasó de 0,25% a 80% de los servicios.',
             },
           ],
         },
