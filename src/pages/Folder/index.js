@@ -14,11 +14,12 @@ function Folder() {
             <h3>abraão Vila Nova</h3>
           </header>
           <div className='folder-ui-content'>
-            <ul>
+            <ul className='folder-ui-list'>
               <li>1. Portfolio / CV</li>
               <li>2. Blog</li>
-              <li>3. Youtube Chanel</li>
-              <li>4. Games</li>
+              <li>3. Personal Projects</li>
+              <li>4. Youtube Chanel</li>
+              <li>5. Games</li>
             </ul>
           </div>
         </div>
