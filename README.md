@@ -35,5 +35,6 @@ Open-source projects, experiments, and independent products I build in my free t
 * **🐙 Fala Meu Polvo** — A language-learning app designed to make language practice more interactive, accessible, and consistent.
 * **⏱️ Pomodoro.sh** — A productivity app based on the Pomodoro technique, featuring project and task organization, study-time tracking, and productivity reports.
 * **🧘 Respira** — A minimalist app focused on guided breathing, relaxation, and mindfulness.
-* ** 📚 leitor .md open source
+* ** 📚 easymd open source .md reader
+* ** webgiskit python lib to create gis server
 
