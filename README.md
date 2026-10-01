@@ -27,6 +27,7 @@ I enjoy building software that combines **maps, data, artificial intelligence, a
 
 Open-source projects, experiments, and independent products I build in my free time, exploring web development, GIS, artificial intelligence, game development, productivity, and new technologies.
 
+* **💦 Lavanderia** - An App to do laundry
 * **🖥️ sh-ui** — An open-source UI component library inspired by classic computer terminals, designed for building web applications with a command-line aesthetic.
 * **📼 vhs-ui** — An open-source UI component library inspired by classic vhs loook, designed for building web applications with a command-line aesthetic.
 * **🌍 fetch-geodata** — A geospatial data engine for fetching, processing, and consuming geographic data, designed to simplify GIS integration in applications.
